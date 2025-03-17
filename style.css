@@ -65,9 +65,10 @@ h3 {
 .heart {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
-.liked {
+.liked-status {
   box-shadow: 0 0 20px #c71c0c;
 }
 
