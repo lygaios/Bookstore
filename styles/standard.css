@@ -27,16 +27,10 @@ a {
   margin: 0;
 }
 
-#footer {
-  height: 100px;
-  padding-inline: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #main {
-  height: calc(100vh - 210px);
+  height: calc(100vh - 110px);
   padding-inline: 40px;
   padding-bottom: 10px;
   display: flex;

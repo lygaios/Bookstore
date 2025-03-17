@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #292524;
+  background-color: #292524;
   color: #fdf5e5;
 }
 
@@ -18,9 +18,96 @@ h1 {
   color: #c4a16a;
 }
 
-h2 {
+.h2 {
   font-family: "Expletus Sans", sans-serif;
   color: #c4a16a;
+}
+
+.h3 {
+  font-family: "Expletus Sans", sans-serif;
+  color: #c4a16a;
+}
+
+.book-box {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #37442c;
+  border: solid 1px #a78c6c;
+  color: #fdf5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.data-block {
+  background-color: #292524;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+
+.like-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-box {
+  background-color: #292524;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.text-input {
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #464141;
+  border: solid 1px #756d5d;
+  color: #fdf5e5;
+  transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+  box-shadow: 0 0 20px #fdf5e5;
+  border: solid 1px #858855;
+  outline: none;
+}
+
+.comment-display {
+  background-color: #292524;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 @media (max-width: 700px) {
