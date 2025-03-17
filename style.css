@@ -109,7 +109,7 @@ h3 {
 }
 
 
-.comment-display {
+.comments {
   background-color: #292524;
   display: flex;
   flex-direction: column;
