@@ -39,7 +39,7 @@ function getBookTemplate(i) {
                 <input id="name-input${i}" class="text-input" type="text"></input> 
                 <p>Kommentar:</p>    
                 <input id="comment-input${i}" class="text-input" type="text"></input> 
-                <button class="button" onclick="addComment(${i}})">Kommentar absenden</button>
+                <button class="button" onclick="addComment(${i})">Kommentar absenden</button>
             </div>
             <div class="comments" id="comments${i}"></div>
         </div>
@@ -59,14 +59,14 @@ function getCommentsTemplate(i, j) {
     `
 }
 
-function addComment($i, $j) {
+function addComment(i) {
     let nameInput = document.getElementById(`name-input${i}`);
     let commentInput = document.getElementById(`comment-input${i}`);
     if (nameInput.value != "" && commentInput.value != "") {
-        books[i].comments[j].name.push(nameInput.value);
-        books[i].comments[j].comment.push(commentInput.value);
-    }
+        books[i].comments.push(nameInput.value);
+        books[i].comments.push(commentInput.value);   
     renderBooks();
     nameInput.value = "";
     commentInput.value = "";
+}
 }
