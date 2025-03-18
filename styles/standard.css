@@ -17,7 +17,7 @@ a {
 }
 
 #header {
-  height: 100px;
+  height: 150px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -28,7 +28,7 @@ a {
 }
 
 #main {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 160px);
   padding-inline: 40px;
   padding-bottom: 10px;
   display: flex;
