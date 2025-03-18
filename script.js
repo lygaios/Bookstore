@@ -3,13 +3,15 @@ function init() {
 }
 
 function renderBooks() {
-    document.getElementById("main").innerHTML = "";
+    let booksRef = document.getElementById("main");
+    booksRef.innerHTML = "";
     for (let i = 0; i < books.length; i++) {
-    main.innerHTML += getBookTemplate(i);
+    booksRef.innerHTML += getBookTemplate(i);
 
-
+    let commentsRef = document.getElementById(`comments${i}`);
+    commentsRef.innerHTML = "";
     for (let j = 0; j < books[i].comments.length; j++) {
-    `comments${i}`.innerHTML += getCommentsTemplate(i, j);
+    commentsRef.innerHTML += getCommentsTemplate(i, j);
     };
     }
 }
@@ -46,9 +48,9 @@ function getBookTemplate(i) {
 }
 
 function addLike(i) {
-let likesNumber = document.getElementById(`${books[i].likes}`);
-likesNumber.value = `${books[i].likes + 1}`;
-addClass="liked-status";
+    addClass="liked-status";
+    let likesNumber = document.getElementById(`${books[i].likes}`);
+    likesNumber.innerHTML = `${books[i].likes + 1}`;
 }
 
 function getCommentsTemplate(i, j) {
@@ -58,8 +60,8 @@ function getCommentsTemplate(i, j) {
 }
 
 function addComment(i, j) {
-    let nameInput = document.getElementById("name-input${i}");
-    let commentInput = document.getElementById("comment-input${i}");
+    let nameInput = document.getElementById(`name-input${i}`);
+    let commentInput = document.getElementById(`comment-input${i}`);
     if (nameInput.value != "" && commentInput.value != "") {
         books[i].comments[j].name.push(nameInput.value);
         books[i].comments[j].comment.push(commentInput.value);
