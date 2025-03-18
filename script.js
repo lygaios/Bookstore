@@ -48,9 +48,23 @@ function getBookTemplate(i) {
 }
 
 function addLike(i) {
-    addClass="liked-status";
-    let likesNumber = books[i].likes + 1;
-    books[i].likes = likesNumber;
+    if (books[i].liked == false) {
+        let likesNumber = books[i].likes + 1;
+        books[i].likes = likesNumber;
+        
+        addClass="liked-status";
+        books[i].liked = true;
+        renderBooks();
+    
+  
+    } else {
+        let likesNumber = books[i].likes - 1;
+        books[i].likes = likesNumber;
+        removeClass="liked-status";
+        books[i].liked = false;
+        renderBooks();
+    }
+  
 }
 
 function getCommentsTemplate(i, j) {
@@ -63,10 +77,11 @@ function addComment(i) {
     let nameInput = document.getElementById(`name-input${i}`);
     let commentInput = document.getElementById(`comment-input${i}`);
     if (nameInput.value != "" && commentInput.value != "") {
-        books[i].comments.push(nameInput.value);
-        books[i].comments.push(commentInput.value);   
+        let newComment = {name: nameInput.value, comment: commentInput.value};
+        books[i].comments.push(newComment); 
+
     renderBooks();
     nameInput.value = "";
     commentInput.value = "";
-}
+    }
 }
