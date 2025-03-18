@@ -29,7 +29,7 @@ function getBookTemplate(i) {
         
         <div class="like-row">
         <p>${books[i].likes}</p> 
-        <img class="heart" src="./assets/icons/heart.png" alt="Like" onclick="addLike(i)">
+        <img class="heart" src="./assets/icons/heart.png" alt="Like" onclick="addLike(${i})">
         </div>
         
         <div class="comment-box">
@@ -39,7 +39,7 @@ function getBookTemplate(i) {
                 <input id="name-input${i}" class="text-input" type="text"></input> 
                 <p>Kommentar:</p>    
                 <input id="comment-input${i}" class="text-input" type="text"></input> 
-                <button class="button" onclick="addComment()">Kommentar absenden</button>
+                <button class="button" onclick="addComment(${i}})">Kommentar absenden</button>
             </div>
             <div class="comments" id="comments${i}"></div>
         </div>
@@ -49,8 +49,8 @@ function getBookTemplate(i) {
 
 function addLike(i) {
     addClass="liked-status";
-    let likesNumber = document.getElementById(`${books[i].likes}`);
-    likesNumber.innerHTML = `${books[i].likes + 1}`;
+    let likesNumber = books[i].likes + 1;
+    books[i].likes = likesNumber;
 }
 
 function getCommentsTemplate(i, j) {
@@ -59,7 +59,7 @@ function getCommentsTemplate(i, j) {
     `
 }
 
-function addComment(i, j) {
+function addComment($i, $j) {
     let nameInput = document.getElementById(`name-input${i}`);
     let commentInput = document.getElementById(`comment-input${i}`);
     if (nameInput.value != "" && commentInput.value != "") {
